@@ -14,7 +14,7 @@ public class SGroup {
 		
 		Text text = new Text(group, SWT.NONE);
 		text.setText("Write here");
-		text.setLocation(32, 32);
+		text.setLocation(32, 30);
 		text.pack();
 		
 		Combo combo = new Combo(group, SWT.DROP_DOWN);

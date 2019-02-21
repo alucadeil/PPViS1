@@ -15,6 +15,7 @@ public class Main {
 		SGroup group1 = new SGroup(shell);
 		SGroup2 group2 = new SGroup2(shell);
 		SGroup3 group3 = new SGroup3(shell);
+		SGroup4 group4  = new SGroup4(shell);
 		
 		shell.open();
 		while(!shell.isDisposed()) {

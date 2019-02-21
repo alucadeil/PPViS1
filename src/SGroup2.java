@@ -14,7 +14,7 @@ public class SGroup2 {
 			
 			Text text = new Text(group, SWT.NONE);
 			text.setText("Write here");
-			text.setLocation(32, 32);
+			text.setLocation(32, 30);
 			text.pack();
 
 			Button button1 = new Button(group, SWT.PUSH);

@@ -24,17 +24,17 @@ public class SGroup3 {
 		
 		Button radio1 = new Button(group, SWT.RADIO);
 		radio1.setText("First");
-		radio1.setLocation(32, 85);
+		radio1.setLocation(32, 95);
 		radio1.pack();
 		
 		Button radio2 = new Button(group, SWT.RADIO);
 		radio2.setText("Second");
-		radio2.setLocation(32, 105);
+		radio2.setLocation(32, 115);
 		radio2.pack();
 		
 		Button radio3 = new Button(group, SWT.RADIO);
 		radio3.setText("Third");
-		radio3.setLocation(32, 125);
+		radio3.setLocation(32, 135);
 		radio3.pack();
 		
 		check(text, chkButton, radio1, radio2, radio3);
@@ -43,8 +43,7 @@ public class SGroup3 {
 			
 	}
 	
-	private void check(Text text, Button push, Button radio1, Button radio2, Button radio3)
-	{	
+	private void check(Text text, Button push, Button radio1, Button radio2, Button radio3) {	
 		push.addSelectionListener(new SelectionAdapter() {
 			
 			@Override
