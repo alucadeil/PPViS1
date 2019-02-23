@@ -30,17 +30,17 @@ public class SGroup4 {
 		chkButton.pack();
 		
 		Button checkBox1 = new Button(group, SWT.CHECK);
-		checkBox1.setText("Check one");
+		checkBox1.setText("One");
 		checkBox1.setLocation(32, 95);
 		checkBox1.pack();
 		
 		Button checkBox2 = new Button(group, SWT.CHECK);
-		checkBox2.setText("Check two");
+		checkBox2.setText("Two");
 		checkBox2.setLocation(32, 115);
 		checkBox2.pack();
 		
 		Button checkBox3 = new Button(group, SWT.CHECK);
-		checkBox3.setText("Check three");
+		checkBox3.setText("Three");
 		checkBox3.setLocation(32, 135);
 		checkBox3.pack();
 		
@@ -59,10 +59,9 @@ public class SGroup4 {
 				if(txt.equals(null)) {
 					return;
 				}
-				if((!txt.equals(checkBox1)) && (!txt.equals(checkBox1)) && (!txt.equals(checkBox1))) {
+				if(!txt.equals(checkBox1.getText()) && !txt.equals(checkBox2.getText()) && !txt.equals(checkBox3.getText())) {
 					message(shell);
 				}
-				
 				if(txt.equals(checkBox1.getText())) {
 					checkBox1.setSelection(true);
 				} else if(txt.equals(checkBox2.getText())) {
