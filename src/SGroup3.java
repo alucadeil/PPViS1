@@ -2,15 +2,23 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.RowLayout;
 
 public class SGroup3 {
 	
 	public SGroup3(Shell shell) {
 		
 		Group group = new Group(shell, SWT.SHADOW_ETCHED_IN);
-		
-		group.setLocation(406, 10);
 		group.setText("Third Group");
+		
+		RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
+		group.setLayout(rowLayout);
+		rowLayout.marginTop = 10;
+		rowLayout.marginLeft = 32;
+		rowLayout.marginRight = 32;
+		rowLayout.marginBottom = 10;
+		rowLayout.spacing = 10;
 		
 		Text text = new Text(group, SWT.NONE);
 		text.setText("");
@@ -39,7 +47,6 @@ public class SGroup3 {
 		
 		check(text, chkButton, radio1, radio2, radio3);
 		
-		group.setSize(128, 160);
 			
 	}
 	

@@ -2,12 +2,22 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.RowLayout;
 
 public class SGroup4 {
 	public SGroup4(Shell shell) {
+		
 		Group group = new Group(shell, SWT.SHADOW_ETCHED_IN);
 		group.setText("Fourth Group");
-		group.setLocation(584, 10);
+		
+		RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
+		group.setLayout(rowLayout);
+		rowLayout.marginTop = 10;
+		rowLayout.marginLeft = 32;
+		rowLayout.marginRight = 32;
+		rowLayout.marginBottom = 10;
+		rowLayout.spacing = 15;
 		
 		Text text = new Text(group, SWT.NONE);
 		text.setText("");
@@ -36,7 +46,6 @@ public class SGroup4 {
 		
 		check(text, chkButton, checkBox1, checkBox2, checkBox3, shell);
 		
-		group.setSize(128, 160);
 		
 	}
 	
@@ -70,7 +79,7 @@ public class SGroup4 {
 	private void message(Shell shell) {
 		MessageBox message = new MessageBox(shell);
 		message.setText("ERROR");
-		message.setMessage("ббедхре ясыеярбсчыее хлъ");
+		message.setMessage("");
 		message.open();
 		return;
 	}
