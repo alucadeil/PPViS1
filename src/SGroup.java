@@ -11,6 +11,8 @@ public class SGroup {
 		Group group = new Group(shell, SWT.SHADOW_ETCHED_IN);
 		group.setText("First Group");
 		
+		group.setToolTipText("Первое задание");
+		
 		RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
 		group.setLayout(rowLayout);
 		rowLayout.marginTop = 10;

@@ -2,7 +2,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.*;
-import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.RowLayout;
 
 public class SGroup4 {
@@ -56,13 +55,14 @@ public class SGroup4 {
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
 				String txt = text.getText();
-				if(txt.equals(null)) {
+				if(txt == null) {
 					return;
 				}
-				if(!txt.equals(checkBox1.getText()) && !txt.equals(checkBox2.getText()) && !txt.equals(checkBox3.getText())) {
+				if(!txt.equals(checkBox1.getText()) 
+						&& !txt.equals(checkBox2.getText())
+						&& !txt.equals(checkBox3.getText())) {
 					message(shell);
-				}
-				if(txt.equals(checkBox1.getText())) {
+				} else if(txt.equals(checkBox1.getText())) {
 					checkBox1.setSelection(true);
 				} else if(txt.equals(checkBox2.getText())) {
 					checkBox2.setSelection(true);
@@ -72,13 +72,12 @@ public class SGroup4 {
 					
 			}
 			});
-		
 	}
 	
 	private void message(Shell shell) {
 		MessageBox message = new MessageBox(shell);
 		message.setText("ERROR");
-		message.setMessage("");
+		message.setMessage("¬ведите существующее название");
 		message.open();
 		return;
 	}
