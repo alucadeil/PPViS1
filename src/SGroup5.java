@@ -10,15 +10,27 @@ public class SGroup5 {
 		Group group = new Group(shell, SWT.SHADOW_ETCHED_IN);
 		group.setText("Fifth group");
 		
-		RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
+		GridLayout rowLayout = new GridLayout();
+		rowLayout.numColumns = 4;
 		group.setLayout(rowLayout);
-		rowLayout.marginTop = 10;
-		rowLayout.marginLeft = 16;
-		rowLayout.marginRight = 16;
-		rowLayout.marginBottom = 10;
 		
+		Text text = new Text(group, SWT.NONE);
+		text.setText("Write here");
+		text.setLocation(32, 30);
+		text.pack();
+
+		Button button1 = new Button(group, SWT.PUSH);
+		button1.setText("Push 1");
+		
+		Button button2 = new Button(group, SWT.PUSH);
+		button2.setText("Push 2");
+	
+		Button button3 = new Button(group, SWT.PUSH);
+		button3.setText("Push 3");	
+
 		Table table = new Table(group, SWT.BORDER | SWT.FULL_SELECTION);
 		table.setHeaderVisible(true);
+		table.setLinesVisible(true);
 		
 		TableColumn tc1 = new TableColumn(table, SWT.CENTER);
 		tc1.setText("First");
@@ -28,8 +40,44 @@ public class SGroup5 {
 	    tc2.setText("Second");
 	    tc2.setWidth(80);
 	    
-
-
+	    FirstButton(button1, text, table, group, shell);
 	    
+	    SecondButton(button2, table, text);
+	    
+	    group.pack();
+	}
+	
+	private void FirstButton (Button but1, Text text, Table table, Group group, Shell shell) {
+		
+		but1.addSelectionListener(new SelectionAdapter() {
+	    	
+	    	@Override
+	    	public void widgetSelected(SelectionEvent arg0) {
+	    		String txt = text.getText();
+	    		TableItem item = new TableItem(table, SWT.NONE);
+	    		item.setText(txt);
+	    		group.pack();
+	    		shell.pack();
+	    	}
+	    });
+	    
+		
+	}
+	
+	private void SecondButton (Button but2, Table table, Text text) {
+		
+		but2.addSelectionListener(new SelectionAdapter() {
+	 
+	    	@Override
+	    	public void widgetSelected(SelectionEvent arg0) {
+	    		int index = table.getSelectionIndex();
+	    		
+	    		TableItem item = new TableItem(table, SWT.NONE);
+	    		
+	    	
+	    	}
+	    });
+	    
+		
 	}
 }

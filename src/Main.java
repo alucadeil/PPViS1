@@ -9,9 +9,7 @@ public class Main {
 	public Main(Display display) {
 		Shell shell = new Shell(display);
 		shell.setText("LabWork");
-		shell.setSize(1024, 256);
-		CenteredWindow(shell);
-		
+
         RowLayout rowLayout= new RowLayout(SWT.HORIZONTAL);
         shell.setLayout(rowLayout);
 		rowLayout.marginTop = 10;
@@ -26,7 +24,10 @@ public class Main {
 		SGroup4 group4  = new SGroup4(shell);
 		SGroup5 group5 = new SGroup5(shell);
 		
+		shell.pack();
+		CenteredWindow(shell);
 		shell.open();
+		
 		while(!shell.isDisposed()) {
 			if(!display.readAndDispatch()) {
 				display.sleep();
