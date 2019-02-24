@@ -44,6 +44,8 @@ public class SGroup5 {
 	    
 	    SecondButton(button2, table, text);
 	    
+	    ThirdButton(button3, table, text);
+	    
 	    group.pack();
 	}
 	
@@ -60,8 +62,6 @@ public class SGroup5 {
 	    		shell.pack();
 	    	}
 	    });
-	    
-		
 	}
 	
 	private void SecondButton (Button but2, Table table, Text text) {
@@ -71,13 +71,38 @@ public class SGroup5 {
 	    	@Override
 	    	public void widgetSelected(SelectionEvent arg0) {
 	    		int index = table.getSelectionIndex();
-	    		
-	    		TableItem item = new TableItem(table, SWT.NONE);
-	    		
-	    	
+	    		if(index == -1) {
+	    			return;
+	    		}
+	    		TableItem item = table.getItem(index);
+	    		String txt = item.getText();
+		    	if(txt == "") {
+		    		return;
+		    	} 
+	    		table.clear(index);
+	    		item.setText(1, txt);
 	    	}
 	    });
+	}
 	    
-		
+	private void ThirdButton (Button but3, Table table, Text text) {
+			
+		but3.addSelectionListener(new SelectionAdapter() {
+		 
+		   	@Override
+		   	public void widgetSelected(SelectionEvent arg0) {
+		   		int index = table.getSelectionIndex();
+		   		if(index == -1) {
+		   			return;
+		   		}
+		    	TableItem item = table.getItem(index);
+		    	String txt = item.getText(1);
+		    	if(txt == "") {
+		    		return;
+		    	} 
+		    	table.clear(index);
+		    	item.setText(0, txt);
+		    	}
+		    });
 	}
 }
