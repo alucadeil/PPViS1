@@ -55,29 +55,34 @@ public class SGroup4 {
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
 				String txt = text.getText();
+				
+				String[] subStr;
+				String delim = " ";
 				if(txt == null) {
 					return;
 				}
-				if(!txt.equals(checkBox1.getText()) 
-						&& !txt.equals(checkBox2.getText())
-						&& !txt.equals(checkBox3.getText())) {
-					message(shell);
-				} else if(txt.equals(checkBox1.getText())) {
-					checkBox1.setSelection(true);
-				} else if(txt.equals(checkBox2.getText())) {
-					checkBox2.setSelection(true);
-				} else if(txt.equals(checkBox3.getText())) {
-					checkBox3.setSelection(true);
+				subStr = txt.split(delim);
+				for(int i = 0; i < subStr.length;i++) {
+					if(!subStr[i].equals(checkBox1.getText()) 
+							&& !subStr[i].equals(checkBox2.getText())
+							&& !subStr[i].equals(checkBox3.getText())) {
+						message(shell, subStr[i]);
+					} else if(subStr[i].equals(checkBox1.getText())) {
+						checkBox1.setSelection(true);
+					} else if(subStr[i].equals(checkBox2.getText())) {
+						checkBox2.setSelection(true);
+					} else if(subStr[i].equals(checkBox3.getText())) {
+						checkBox3.setSelection(true);
+					}
 				}
-					
 			}
 			});
 	}
 	
-	private void message(Shell shell) {
+	private void message(Shell shell, String string) {
 		MessageBox message = new MessageBox(shell);
 		message.setText("ERROR");
-		message.setMessage("¬ведите существующее название");
+		message.setMessage(string + ": ¬ведите существующее название");
 		message.open();
 		return;
 	}
