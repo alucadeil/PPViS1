@@ -10,6 +10,7 @@ public class SGroup3 {
 		
 		Group group = new Group(shell, SWT.SHADOW_ETCHED_IN);
 		group.setText("Third Group");
+		group.setToolTipText("Третье задание");
 		
 		RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
 		group.setLayout(rowLayout);
@@ -19,37 +20,37 @@ public class SGroup3 {
 		rowLayout.marginBottom = 10;
 		rowLayout.spacing = 10;
 		
-		Text text = new Text(group, SWT.NONE);
-		text.setText("");
-		text.setLocation(32, 32);
-		text.pack();
+		Text textLine = new Text(group, SWT.NONE);
+		textLine.setText("");
+		textLine.setLocation(32, 32);
+		textLine.pack();
 		
-		Button chkButton = new Button(group, SWT.PUSH);
-		chkButton.setText("PUSH ME");
-		chkButton.setLocation(32, 60);
-		chkButton.pack();
+		Button buttonCheckSelected = new Button(group, SWT.PUSH);
+		buttonCheckSelected.setText("PUSH ME");
+		buttonCheckSelected.setLocation(32, 60);
+		buttonCheckSelected.pack();
 		
-		Button radio1 = new Button(group, SWT.RADIO);
-		radio1.setText("First");
-		radio1.setLocation(32, 95);
-		radio1.pack();
+		Button firstRadioButton = new Button(group, SWT.RADIO);
+		firstRadioButton.setText("First");
+		firstRadioButton.setLocation(32, 95);
+		firstRadioButton.pack();
 		
-		Button radio2 = new Button(group, SWT.RADIO);
-		radio2.setText("Second");
-		radio2.setLocation(32, 115);
-		radio2.pack();
+		Button secondRadioButton = new Button(group, SWT.RADIO);
+		secondRadioButton.setText("Second");
+		secondRadioButton.setLocation(32, 115);
+		secondRadioButton.pack();
 		
-		Button radio3 = new Button(group, SWT.RADIO);
-		radio3.setText("Third");
-		radio3.setLocation(32, 135);
-		radio3.pack();
+		Button thirdRadioButton = new Button(group, SWT.RADIO);
+		thirdRadioButton.setText("Third");
+		thirdRadioButton.setLocation(32, 135);
+		thirdRadioButton.pack();
 		
-		check(text, chkButton, radio1, radio2, radio3);
+		checkSelected(textLine, buttonCheckSelected, firstRadioButton, secondRadioButton, thirdRadioButton);
 		
 			
 	}
 	
-	private void check(Text text, Button push, Button radio1, Button radio2, Button radio3) {	
+	private void checkSelected(Text text, Button push, Button radio1, Button radio2, Button radio3) {	
 		push.addSelectionListener(new SelectionAdapter() {
 			
 			@Override
@@ -73,7 +74,7 @@ public class SGroup3 {
 				}
 					
 			}
-			});
+		});
 		
 	}
 

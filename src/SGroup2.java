@@ -9,6 +9,8 @@ public class SGroup2 {
 			
 			Group group = new Group(shell, SWT.SHADOW_ETCHED_IN);
 			group.setText("Second Group");
+			group.setToolTipText("Второе задание");
+			
 			
 			RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
 			group.setLayout(rowLayout);
@@ -18,48 +20,48 @@ public class SGroup2 {
 			rowLayout.marginBottom = 10;
 			rowLayout.spacing = 10;
 			
-			Text text = new Text(group, SWT.NONE);
-			text.setText("Write here");
-			text.setLocation(32, 30);
-			text.pack();
+			Text textLine = new Text(group, SWT.NONE);
+			textLine.setText("Write here");
+			textLine.setLocation(32, 30);
+			textLine.pack();
 
-			Button button1 = new Button(group, SWT.PUSH);
-			button1.setLocation(32, 64);
-			button1.setText("Text one");
-			button1.pack();
+			Button textToButton = new Button(group, SWT.PUSH);
+			textToButton.setLocation(32, 64);
+			textToButton.setText("Text one");
+			textToButton.pack();
 			
-			Button button2 = new Button(group, SWT.PUSH);
-			button2.setLocation(32, 96);
-			button2.setText("Text");
-			button2.pack();
+			Button buttonTextToAnotherButton = new Button(group, SWT.PUSH);
+			buttonTextToAnotherButton.setLocation(32, 96);
+			buttonTextToAnotherButton.setText("Text");
+			buttonTextToAnotherButton.pack();
 		
-			button1.addSelectionListener(new SelectionAdapter() {
+			textToButton.addSelectionListener(new SelectionAdapter() {
 				
 				@Override
 				public void widgetSelected(SelectionEvent arg0) {
-					String txt = text.getText();
+					String txt = textLine.getText();
 					if(txt == null) {
 						return;
 					}
-					button2.setText(txt);
-					button2.pack();
+					buttonTextToAnotherButton.setText(txt);
+					buttonTextToAnotherButton.pack();
 				}
-				});
+			});
 			
-			button2.addSelectionListener(new SelectionAdapter() {
+			buttonTextToAnotherButton.addSelectionListener(new SelectionAdapter() {
 				
 				@Override
 				public void widgetSelected(SelectionEvent arg0) {
-					String txt = button1.getText();
+					String txt = textToButton.getText();
 					if(txt == null) {
 						return;
 					}
-					button1.setText(button2.getText());
-					button1.pack();
-					button2.setText(txt);
-					button2.pack();
+					textToButton.setText(buttonTextToAnotherButton.getText());
+					textToButton.pack();
+					buttonTextToAnotherButton.setText(txt);
+					buttonTextToAnotherButton.pack();
 				}
-				});
+			});
 		
 		}
 		

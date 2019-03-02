@@ -9,47 +9,48 @@ public class SGroup5 {
 		
 		Group group = new Group(shell, SWT.SHADOW_ETCHED_IN);
 		group.setText("Fifth group");
+		group.setToolTipText("Пятое задание");
 		
 		GridLayout rowLayout = new GridLayout();
 		rowLayout.numColumns = 4;
 		group.setLayout(rowLayout);
 		
-		Text text = new Text(group, SWT.NONE);
-		text.setText("Write here");
-		text.setLocation(32, 30);
-		text.pack();
+		Text textLine = new Text(group, SWT.NONE);
+		textLine.setText("Write here");
+		textLine.setLocation(32, 30);
+		textLine.pack();
 
-		Button button1 = new Button(group, SWT.PUSH);
-		button1.setText("Push 1");
+		Button textToTable = new Button(group, SWT.PUSH);
+		textToTable.setText("Push 1");
 		
-		Button button2 = new Button(group, SWT.PUSH);
-		button2.setText("Push 2");
+		Button textToSecondColumn = new Button(group, SWT.PUSH);
+		textToSecondColumn.setText("Push 2");
 	
-		Button button3 = new Button(group, SWT.PUSH);
-		button3.setText("Push 3");	
+		Button textToFirstColumn = new Button(group, SWT.PUSH);
+		textToFirstColumn.setText("Push 3");	
 
 		Table table = new Table(group, SWT.BORDER | SWT.FULL_SELECTION);
 		table.setHeaderVisible(true);
 		table.setLinesVisible(true);
 		
-		TableColumn tc1 = new TableColumn(table, SWT.CENTER);
-		tc1.setText("First");
-		tc1.setWidth(80);
+		TableColumn firstTableColumn = new TableColumn(table, SWT.CENTER);
+		firstTableColumn.setText("First");
+		firstTableColumn.setWidth(80);
 	    
-	    TableColumn tc2 = new TableColumn(table, SWT.CENTER);
-	    tc2.setText("Second");
-	    tc2.setWidth(80);
+	    TableColumn secondTableColumn = new TableColumn(table, SWT.CENTER);
+	    secondTableColumn.setText("Second");
+	    secondTableColumn.setWidth(80);
 	    
-	    FirstButton(button1, text, table, group, shell);
+	    textLineToColumn(textToTable, textLine, table, group, shell);
 	    
-	    SecondButton(button2, table, text);
+	    selectedTextToSecondColumn(textToSecondColumn, table, textLine);
 	    
-	    ThirdButton(button3, table, text);
+	    selectedTextToFirstColumn(textToFirstColumn, table, textLine);
 	    
 	    group.pack();
 	}
 	
-	private void FirstButton (Button but1, Text text, Table table, Group group, Shell shell) {
+	private void textLineToColumn (Button but1, Text text, Table table, Group group, Shell shell) {
 		
 		but1.addSelectionListener(new SelectionAdapter() {
 	    	
@@ -64,7 +65,7 @@ public class SGroup5 {
 	    });
 	}
 	
-	private void SecondButton (Button but2, Table table, Text text) {
+	private void selectedTextToSecondColumn (Button but2, Table table, Text text) {
 		
 		but2.addSelectionListener(new SelectionAdapter() {
 	 
@@ -85,7 +86,7 @@ public class SGroup5 {
 	    });
 	}
 	    
-	private void ThirdButton (Button but3, Table table, Text text) {
+	private void selectedTextToFirstColumn (Button but3, Table table, Text text) {
 			
 		but3.addSelectionListener(new SelectionAdapter() {
 		 
@@ -102,7 +103,7 @@ public class SGroup5 {
 		    	} 
 		    	table.clear(index);
 		    	item.setText(0, txt);
-		    	}
-		    });
+		    }   	
+		});
 	}
 }

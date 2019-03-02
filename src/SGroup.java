@@ -21,30 +21,30 @@ public class SGroup {
 		rowLayout.marginBottom = 10;
 		rowLayout.spacing = 10;
 		
-		Text text = new Text(group, SWT.NONE);
-		text.setText("Write here");
-		text.setLocation(32, 30);
-		text.pack();
+		Text textLine = new Text(group, SWT.NONE);
+		textLine.setText("Write here");
+		textLine.setLocation(32, 30);
+		textLine.pack();
 		
-		Combo combo = new Combo(group, SWT.DROP_DOWN);
-		combo.setLocation(32, 96);
-		combo.add("Hello!");
-		combo.pack();
+		Combo comboBox = new Combo(group, SWT.DROP_DOWN);
+		comboBox.setLocation(32, 96);
+		comboBox.add("Hello!");
+		comboBox.pack();
 		
-		Button button = new Button(group, SWT.PUSH);
-		button.setLocation(32, 64);
-		button.setText("PUSH ME");
-		button.pack();
+		Button buttonSelectionToCombo = new Button(group, SWT.PUSH);
+		buttonSelectionToCombo.setLocation(32, 64);
+		buttonSelectionToCombo.setText("PUSH ME");
+		buttonSelectionToCombo.pack();
 		
-		button.addSelectionListener(new SelectionAdapter() {
+		buttonSelectionToCombo.addSelectionListener(new SelectionAdapter() {
 			
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
-				String txt = text.getText();
+				String txt = textLine.getText();
 				if(txt == null) {
 					return;
 				}
-				String[] ComboItems = combo.getItems();
+				String[] ComboItems = comboBox.getItems();
 				for(String Item : ComboItems) {
 					if(Item.equals(txt)) {
 						MessageBox message = new MessageBox(shell);
@@ -54,7 +54,7 @@ public class SGroup {
 						return;
 					}
 				}
-				combo.add(txt);
+				comboBox.add(txt);
 			}
 		});
 
