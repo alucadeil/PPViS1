@@ -1,8 +1,14 @@
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.*;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.TableItem;
+import org.eclipse.swt.widgets.Text;
 
 public class SGroup5 {
 	public SGroup5(Shell shell) {
@@ -20,13 +26,13 @@ public class SGroup5 {
 		textLine.setLocation(32, 30);
 		textLine.pack();
 
-		Button textToTable = new Button(group, SWT.PUSH);
+		RhombButton textToTable = new RhombButton(group, SWT.PUSH);
 		textToTable.setText("Push 1");
 		
-		Button textToSecondColumn = new Button(group, SWT.PUSH);
+		RhombButton textToSecondColumn = new RhombButton(group, SWT.PUSH);
 		textToSecondColumn.setText("Push 2");
 	
-		Button textToFirstColumn = new Button(group, SWT.PUSH);
+		RhombButton textToFirstColumn = new RhombButton(group, SWT.PUSH);
 		textToFirstColumn.setText("Push 3");	
 
 		Table table = new Table(group, SWT.BORDER | SWT.FULL_SELECTION);
@@ -50,7 +56,7 @@ public class SGroup5 {
 	    group.pack();
 	}
 	
-	private void textLineToColumn (Button but1, Text text, Table table, Group group, Shell shell) {
+	private void textLineToColumn (RhombButton but1, Text text, Table table, Group group, Shell shell) {
 		
 		but1.addSelectionListener(new SelectionAdapter() {
 	    	
@@ -65,7 +71,7 @@ public class SGroup5 {
 	    });
 	}
 	
-	private void selectedTextToSecondColumn (Button but2, Table table, Text text) {
+	private void selectedTextToSecondColumn (RhombButton but2, Table table, Text text) {
 		
 		but2.addSelectionListener(new SelectionAdapter() {
 	 
@@ -86,7 +92,7 @@ public class SGroup5 {
 	    });
 	}
 	    
-	private void selectedTextToFirstColumn (Button but3, Table table, Text text) {
+	private void selectedTextToFirstColumn (RhombButton but3, Table table, Text text) {
 			
 		but3.addSelectionListener(new SelectionAdapter() {
 		 

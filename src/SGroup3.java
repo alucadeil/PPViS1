@@ -1,8 +1,11 @@
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
 
 public class SGroup3 {
 	
@@ -25,7 +28,7 @@ public class SGroup3 {
 		textLine.setLocation(32, 32);
 		textLine.pack();
 		
-		Button buttonCheckSelected = new Button(group, SWT.PUSH);
+		RhombButton buttonCheckSelected = new RhombButton(group, SWT.PUSH);
 		buttonCheckSelected.setText("PUSH ME");
 		buttonCheckSelected.setLocation(32, 60);
 		buttonCheckSelected.pack();
@@ -50,7 +53,7 @@ public class SGroup3 {
 			
 	}
 	
-	private void checkSelected(Text text, Button push, Button radio1, Button radio2, Button radio3) {	
+	private void checkSelected(Text text, RhombButton push, Button radio1, Button radio2, Button radio3) {	
 		push.addSelectionListener(new SelectionAdapter() {
 			
 			@Override

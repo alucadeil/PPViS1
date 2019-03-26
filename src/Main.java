@@ -1,17 +1,20 @@
-import org.eclipse.swt.layout.*;
-import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+
 
 public class Main {
 
 	public Main(Display display) {
 		Shell shell = new Shell(display);
 		shell.setText("LabWork");
-
+		
         RowLayout rowLayout= new RowLayout(SWT.HORIZONTAL);
         shell.setLayout(rowLayout);
+
 		rowLayout.marginTop = 10;
 		rowLayout.marginLeft = 32;
 		rowLayout.marginRight = 32;

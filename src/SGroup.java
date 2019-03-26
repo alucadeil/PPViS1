@@ -1,8 +1,13 @@
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.MessageBox;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
 
 public class SGroup {
 	
@@ -31,7 +36,7 @@ public class SGroup {
 		comboBox.add("Hello!");
 		comboBox.pack();
 		
-		Button buttonSelectionToCombo = new Button(group, SWT.PUSH);
+		RhombButton buttonSelectionToCombo = new RhombButton(group, SWT.PUSH);
 		buttonSelectionToCombo.setLocation(32, 64);
 		buttonSelectionToCombo.setText("PUSH ME");
 		buttonSelectionToCombo.pack();

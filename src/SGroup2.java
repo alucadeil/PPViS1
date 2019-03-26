@@ -1,8 +1,11 @@
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
 
 public class SGroup2 {
 		public SGroup2 (Shell shell) {
@@ -10,7 +13,6 @@ public class SGroup2 {
 			Group group = new Group(shell, SWT.SHADOW_ETCHED_IN);
 			group.setText("Second Group");
 			group.setToolTipText("Второе задание");
-			
 			
 			RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
 			group.setLayout(rowLayout);
@@ -25,12 +27,12 @@ public class SGroup2 {
 			textLine.setLocation(32, 30);
 			textLine.pack();
 
-			Button textToButton = new Button(group, SWT.PUSH);
+			RhombButton textToButton = new RhombButton(group, SWT.PUSH);
 			textToButton.setLocation(32, 64);
 			textToButton.setText("Text one");
 			textToButton.pack();
 			
-			Button buttonTextToAnotherButton = new Button(group, SWT.PUSH);
+			RhombButton buttonTextToAnotherButton = new RhombButton(group, SWT.PUSH);
 			buttonTextToAnotherButton.setLocation(32, 96);
 			buttonTextToAnotherButton.setText("Text");
 			buttonTextToAnotherButton.pack();
@@ -45,6 +47,8 @@ public class SGroup2 {
 					}
 					buttonTextToAnotherButton.setText(txt);
 					buttonTextToAnotherButton.pack();
+					group.pack();
+					shell.pack();
 				}
 			});
 			
@@ -60,6 +64,8 @@ public class SGroup2 {
 					textToButton.pack();
 					buttonTextToAnotherButton.setText(txt);
 					buttonTextToAnotherButton.pack();
+					group.pack();
+					shell.pack();
 				}
 			});
 		
